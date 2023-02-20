@@ -51,3 +51,7 @@ opt.conceallevel = 0
 
 -- the encoding written to a file
 opt.fileencoding = "utf-8"
+
+-- fold setup
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"

@@ -71,10 +71,19 @@ bufferline.setup({
 		--   -- add custom logic
 		--   return buffer_a.modified > buffer_b.modified
 		-- end
+		style_preset = {
+			bufferline.style_preset.no_italic,
+		},
+		hover = {
+			enabled = true,
+			delay = 200,
+			reveal = { "close" },
+		},
 	},
 	highlights = {
 		fill = {
-			fg = { attribute = "fg", highlight = "#ff0000" },
+			--fg = { attribute = "fg", highlight = "#ff0000" },
+			fg = { attribute = "fg", highlight = "TabLine" },
 			bg = { attribute = "bg", highlight = "TabLine" },
 		},
 		background = {

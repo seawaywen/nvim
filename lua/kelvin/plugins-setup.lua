@@ -52,7 +52,9 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	use({ "nvim-tree/nvim-tree.lua", requires = {
+		"nvim-tree/nvim-web-devicons",
+	} })
 
 	-- icons
 	use("kyazdani42/nvim-web-devicons")

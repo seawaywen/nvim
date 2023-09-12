@@ -17,7 +17,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- general keymaps
+-- General keymaps
 keymap("i", "jk", "<ESC>", opts)
 
 keymap("n", "<leader>nh", ":nohl<CR>", opts)
@@ -35,12 +35,18 @@ keymap("n", "<leader>to", ":tabnew<CR>", opts) -- open new tab
 keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 keymap("n", "<leader>tn", ":tabn<CR>", opts) -- go to next tab
 keymap("n", "<leader>tp", ":tabp<CR>", opts) -- go to previous tab
+keymap("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- plugin keymaps
+--  maximize the active pane
 keymap("n", "<leader>sm", ":MaximizerToggle<CR>", opts)
-
+--  replace string
+keymap("n", "<leader>rp", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
+-- lazygit
+keymap("n", "<leader>gg", ":<Cmd>LazyGit<CR>", opts)
+-- open terminal
+keymap("n", "<leader>tt", "<Cmd>sp<CR> <Cmd>term<CR> <Cmd>resize 20N<CR> i", opts)
 -- nvim-tree
--- keymap("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- telescope
@@ -77,12 +83,22 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Python debug
+-- keymap("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", opts)
+--
+
+-- Running Code
+keymap("n", "<leader>cb", "<Cmd>Build<CR>", opts)
+keymap("n", "<leader>cd", "<Cmd>DebugBuild<CR>", opts)
+keymap("n", "<leader>cl", "<Cmd>Run<CR>", opts)
+keymap("n", "<leader>cr", "<Cmd>Ha<CR>", opts)
+
 -- Copilot settings
-vim.g.copilot_assume_mapped = true
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-H>", "copilot#Previous()", { silent = true, expr = true })
-vim.api.nvim_set_keymap("i", "<C-K>", "copilot#Next()", { silent = true, expr = true })
+--vim.g.copilot_assume_mapped = true
+--vim.g.copilot_no_tab_map = true
+--vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+--vim.api.nvim_set_keymap("i", "<C-H>", "copilot#Previous()", { silent = true, expr = true })
+--vim.api.nvim_set_keymap("i", "<C-K>", "copilot#Next()", { silent = true, expr = true })
 
 vim.g.copilot_filetypes = {
 	["*"] = false,

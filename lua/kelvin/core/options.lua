@@ -1,4 +1,8 @@
-local opt = vim.opt -- for conciseness
+local g = vim.g
+local opt = vim.opt
+
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
 opt.backup = false -- creates a backup file
 opt.undofile = true -- enable persistent undo
@@ -25,12 +29,13 @@ opt.smartcase = true
 opt.smartindent = true
 
 -- cursor line
-opt.cursorline = true
+opt.cursorline = false
 
 -- appearance
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.colorcolumn = "120"
 
 -- backspace
 opt.backspace = "indent,eol,start"
@@ -54,4 +59,4 @@ opt.fileencoding = "utf-8"
 
 -- fold setup
 opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+--opt.foldexpr = "nvim_treesitter#foldexpr()"

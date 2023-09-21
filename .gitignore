@@ -1,0 +1,7 @@
+deb
+deb/*
+mutt/com*
+*.pyc
+*/**/.DS_Store
+pack
+.DS_Store
